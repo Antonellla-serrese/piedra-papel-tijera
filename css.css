@@ -1,0 +1,90 @@
+#nombre-jugador{
+    font-family: monospace;
+    color: cornflowerblue;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: 0%;
+    text-align: right;
+    position:absolute, fixed;
+    background-color: rgb(179, 195, 225); 
+   
+
+}
+#pantalla1{
+    background-color: bisque;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+h1{
+    margin-left: 31%;
+    font-family: monospace;
+    color: cornflowerblue;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: 2%;
+}
+
+#contadorpuntos{
+    font-family: monospace;
+    color: cornflowerblue;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-top: 4%;
+}
+
+#juego{
+    display: flex;
+    margin-left: 2%;
+    
+}
+img{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 25%;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+input{
+    text-align: center;
+    font-family: monospace;
+    background-color: rgb(179, 195, 225);
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-left: 38%;
+    margin-top: 5%;
+    cursor: pointer;
+    border-radius: 20px;
+    border-color: cornflowerblue;
+
+}
+::placeholder{
+    text-align: center;
+    font-family: monospace;
+    color: cornflowerblue;
+    font-size: xx-large;
+    font-weight: bolder;
+
+}
+#comenzar{
+    text-align: center;
+    font-family: monospace;
+    background-color: rgb(179, 195, 225);
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-left: 43.5%;
+    margin-top: 4%;
+    cursor: pointer;
+    border-radius: 20px;
+    border-color: cornflowerblue;
+    text-align: center;
+    font-family: monospace;
+    color: cornflowerblue;
+    font-size: xx-large;
+    font-weight: bolder;
+}

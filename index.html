@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+ 
+    <title>Piedra Papel o Tijera</title>
+</head>
+<body>
+    <header id="nombre-jugador"></header>
+
+    <section id="pantalla1" class="pantallas">
+
+        <h1 id="titulo">Queres jugar al piedra papel o tijera?</h1>
+        <div id="contadorpuntos">
+            0
+        </div>
+
+        <div id="juego">
+            <div class="usuario" id="piedra">
+                <img src="./multimedia/puno.png" alt="piedra" id="punio" >
+            </div>
+            <div class="usuario" id="papel">
+                <img src="./multimedia/mano (1).png" alt="papel" id="palma">
+            </div>
+            <div class="usuario" id="tijera">
+                <img src="./multimedia/tijeras.png" alt="tijera" id="tije">
+            </div>
+        </div>
+         <input placeholder="Ingresa tu nombre" id="ingreso-nombre" type="text">
+       
+         <button id="comenzar">Comenzar</button>
+
+
+
+
+
+
+    </section>
+    <script>
+
+    // variables
+    var nombre = document.getElementById("nombre-jugador"); //header
+    var infoJugador = document.getElementById("ingreso-nombre"); //input
+    var opciones = document.getElementsByClassName("usuario"); // piedra papel o tijera
+    var comenzar = document.getElementById("comenzar"); //boton comenzar
+    var titulo = document.getElementById("titulo");
+    var puntos = document.getElementById("contadorpuntos");
+    var contador;
+    
+    // boton comenzar
+    comenzar.onclick = function(){
+        nombre.innerHTML = infoJugador.value; // ponemos el nomebre del jugador en el header
+        infoJugador.style.display = "none";
+        comenzar.style.display="none";
+    }
+    
+    // asigno con un for las funciones que debe tener cada imagen
+    for(i=0; i<opciones.length; i++){
+       if(opciones[i]== opciones[0]){
+        opciones[i].onclick = function(){
+            piedra();
+        }
+        
+        }
+        if(opciones[i]== opciones[1]){
+            opciones[i].onclick = function(){
+                papel();
+            }
+       }
+       if(opciones[i]== opciones[2]){
+        opciones[i].onclick = function(){
+            tijera();
+        }
+      
+       }
+       ganaste();
+    }
+   
+    var contador =0;
+
+    // funcion si selecciona piedra
+    function piedra(){
+     var random =  Math.floor(Math.random()*(3-0))+0;
+     console.log(random);
+
+
+     if(random == 0){
+
+        titulo.innerHTML="la compu tambien saco piedra, empataste";
+
+        }
+        if(random == 1){
+
+            titulo.innerHTML="La compu saco papel, perdiste";
+                 contador=contador-1;
+                     puntos.innerHTML=contador;
+        }
+
+          if(random == 2){
+            titulo.innerHTML="La compu saco tijera, ganaste";
+                 contador=contador+1;
+                     puntos.innerHTML=contador;
+   }
+   console.log(parseInt(puntos.innerHTML));// me muestra lo del contador
+}
+
+//funcion si selecciona papel
+function papel(){
+
+    var random =  Math.floor(Math.random()*(3-0))+0;
+    console.log(random);
+
+    if(random == 0){
+       titulo.innerHTML="La compu saco piedra, ganaste";
+       contador=contador+1;
+       puntos.innerHTML=contador;
+    }
+    if(random === 1){
+        titulo.innerHTML="La compu saco papel, empataste";
+        
+    }
+   if(random == 2){
+    titulo.innerHTML="La compu saco tijera, perdiste";
+    contador=contador-1;
+    puntos.innerHTML=contador;
+   }
+   console.log(parseInt(puntos.innerHTML));// me muestra lo del contador
+}
+
+//funcion si selecciona tijera
+function tijera(){
+    var random =  Math.floor(Math.random()*(3-0))+0;
+    
+    console.log(random);
+    if(random == 0){
+        titulo.innerHTML="La compu saco piedra, perdiste";
+        contador= contador -1;
+        puntos.innerHTML = contador;
+    }
+    if(random == 1){
+        titulo.innerHTML="La compu saco papel, ganaste";
+       contador=contador+1;
+       puntos.innerHTML=contador;
+    }
+   if(random == 2){
+    titulo.innerHTML="la compu saco tijera, empataste";
+   
+
+   }
+   console.log(parseInt(puntos.innerHTML));// me muestra lo del contador
+} 
+
+//funcion para cuando ganas tres partidas
+function ganaste(){
+    var resultado=(parseInt(puntos.innerHTML));
+    if(resultado==3){
+        alert("GANASTE CAPO");
+    }
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
